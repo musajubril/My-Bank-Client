@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import usePagination, { DisplayPagination } from "@impedans/usepagination";
-import { ApiUrl, FoodParams, AllFoods } from "./Params";
 import { Ripple } from 'react-load-animations';
-import Food from "./Food";
-import axios from "axios";
-import { useQuery } from "react-query";
 import Table from "./Table"
 export default function Pagination({transactions, status, isFetching}) {
   const [data, setData] = useState(transactions);

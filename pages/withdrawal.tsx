@@ -14,7 +14,7 @@ import Pagination from "../components/Pagination";
 
 export default function Withdrawal() {
   const { addToast } = useToasts();
-  const mybank =
+  const mybank: {account: string, full_name: string} =
   typeof window !== "undefined" &&
   jwtDecode(localStorage?.getItem("my_bank_token"));
     const [open, setOpen] = React.useState(false)
@@ -91,7 +91,9 @@ React.useEffect(()=>{
   return (
       <>
       <Modal open={open} action={handleCloseNav} animate={animate} title="Make Withdrawal">
-      <Form formInputs={formInputs} buttonValue="Withdraw" title="Withdraw From" account={mybank?.account} person={mybank?.full_name} disabled={disabled} change={handleChange} submit={submitForm}></Form>
+      <Form formInputs={formInputs} buttonValue="Withdraw" title="Withdraw From" account={mybank?.account} person={mybank?.full_name} disabled={disabled} change={handleChange} submit={submitForm}>
+        
+      </Form>
       </Modal>
     <Layout>
         <Header open={open} action={handleOpenNav} title="Withdrawal History" buttonValue="Withdraw" />

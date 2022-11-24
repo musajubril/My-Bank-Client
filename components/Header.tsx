@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaSortAmountUpAlt, FaChevronDown, FaSearch } from "react-icons/fa"
+import { FaSearch } from "react-icons/fa"
 
 export default function Header({open, action, title, buttonValue}) {
   return (

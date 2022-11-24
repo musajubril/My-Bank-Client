@@ -9,7 +9,13 @@ export default function AutoComplete({banks, selected, setSelected}) {
 //   const [selected, setSelected] = useState(banks[0])
   const [query, setQuery] = useState('')
 
-  const filteredbanks =
+  const filteredbanks: {
+    name: string;
+    slug: string;
+    code: string;
+    ussd: string;
+    logo: string;
+}[] =
     query === ''
       ? banks
       : banks?.filter((bank) =>
@@ -26,7 +32,13 @@ export default function AutoComplete({banks, selected, setSelected}) {
           <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-indigo-300 sm:text-sm border">
             <Combobox.Input
               className="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-1"
-              displayValue={(bank) => bank?.name}
+              displayValue={(bank: {
+                name: string;
+                slug: string;
+                code: string;
+                ussd: string;
+                logo: string;
+            }) => bank?.name}
               onChange={(event) => setQuery(event.target.value)}
             />
             <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
@@ -49,9 +61,9 @@ export default function AutoComplete({banks, selected, setSelected}) {
                   Nothing found.
                 </div>
               ) : (
-                filteredbanks?.map((bank) => (
+                filteredbanks?.map((bank, i) => (
                   <Combobox.Option
-                    key={bank?.id}
+                    key={i}
                     className={({ active }) =>
                       `relative cursor-default select-none py-2 pl-10 pr-4 ${
                         active ? 'bg-indigo-600 text-white' : 'text-gray-900'

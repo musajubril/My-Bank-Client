@@ -14,7 +14,7 @@ import { queryKeys } from "../api/queryKey"
 
 export default function Deposit() {
   const { addToast } = useToasts();
-  const mybank =
+  const mybank: {account: string, full_name: string} =
     typeof window !== "undefined" &&
     jwtDecode(localStorage?.getItem("my_bank_token"));
   const [open, setOpen] = React.useState(false);
@@ -100,7 +100,9 @@ export default function Deposit() {
           disabled={disabled}
           change={handleChange}
           submit={submitForm}
-        ></Form>
+        >
+          
+        </Form>
       </Modal>
       <Layout>
         <Header

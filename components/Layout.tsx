@@ -4,18 +4,12 @@ import {
   AiOutlineUnorderedList,
   AiOutlineUpload,
   AiOutlineSend,
-  AiOutlineDashboard,
-  AiOutlineStar,
-  AiOutlineHistory,
-  AiOutlineBell,
   AiOutlineMenu,
 } from "react-icons/ai";
-import { FaPeopleArrows, FaCogs, FaTimes } from "react-icons/fa";
-import { BsSun, BsLayoutSidebar } from "react-icons/bs";
+import { FaCogs, FaTimes } from "react-icons/fa";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import Link from "next/link"
-import { BsChevronExpand } from "react-icons/bs"
 
 export default function Layout({ children }) {
   const router = useRouter();

@@ -1,4 +1,10 @@
-export const Banks = [
+export const Banks: {
+  name: string;
+  slug: string;
+  code: string;
+  ussd: string;
+  logo: string;
+}[] = [
     {
       "name": "Access Bank",
       "slug": "access-bank",
