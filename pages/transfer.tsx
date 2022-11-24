@@ -133,7 +133,7 @@ export default function Transfer() {
   React.useEffect(() => {
     SetUserAccount(userAccount?.data);
     userAccountStatus === "success" && setShowAmount(true);
-  }, [userAccount?.data]);
+  }, [userAccount?.data, accountNumber]);
   React.useEffect(() => {
     setState({
       ...state,
@@ -164,7 +164,7 @@ export default function Transfer() {
         addToast(data?.message, { appearance: "success", autoDismiss: true });
         setOpen(false);
         setShowAmount(false);
-        SetUserAccount(null);
+        SetUserAccount({});
         cache.invalidateQueries();
         setState({ full_name: "", account: "", amount: "", bank: "" });
       } else {
