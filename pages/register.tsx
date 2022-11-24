@@ -65,7 +65,7 @@ export default function register() {
       />
       <h2 className="mt-6 text-3xl font-extrabold text-center text-gray-900">Create A My Bank Account</h2>
       <h2 className="mt-1 text-xl text-center text-gray-900">Or <span className="text-sm text-blue-600">
-        <Link href="/login">Sign In To Your Account</Link></span></h2>
+        <Link href="/">Sign In To Your Account</Link></span></h2>
     </div>
 
     <div className="sm:mx-auto sm:w-full sm:max-w-md">
