@@ -164,6 +164,7 @@ export default function Transfer() {
         addToast(data?.message, { appearance: "success", autoDismiss: true });
         setOpen(false);
         setShowAmount(false);
+        setAccountNumber(null)
         SetUserAccount({});
         cache.invalidateQueries();
         setState({ full_name: "", account: "", amount: "", bank: "" });
